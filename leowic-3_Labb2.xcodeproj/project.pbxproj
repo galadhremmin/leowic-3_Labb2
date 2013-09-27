@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */; };
+		D76AEAB017F5B6CC0075BA5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */; };
+		D76AEAB217F5B6CC0075BA5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */; };
+		D76AEAB417F5B6CC0075BA5F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAB317F5B6CC0075BA5F /* CoreData.framework */; };
+		D76AEABA17F5B6CC0075BA5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAB817F5B6CC0075BA5F /* InfoPlist.strings */; };
+		D76AEABC17F5B6CC0075BA5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEABB17F5B6CC0075BA5F /* main.m */; };
+		D76AEAC017F5B6CC0075BA5F /* AldAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEABF17F5B6CC0075BA5F /* AldAppDelegate.m */; };
+		D76AEAC217F5B6CC0075BA5F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC117F5B6CC0075BA5F /* Default.png */; };
+		D76AEAC417F5B6CC0075BA5F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC317F5B6CC0075BA5F /* Default@2x.png */; };
+		D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */; };
+		D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */; };
+		D76AEACC17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D76AEACA17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld */; };
+		D76AEACF17F5B6CC0075BA5F /* AldMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEACE17F5B6CC0075BA5F /* AldMasterViewController.m */; };
+		D76AEAD217F5B6CC0075BA5F /* AldDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEAD117F5B6CC0075BA5F /* AldDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D76AEAAA17F5B6CC0075BA5F /* leowic-3_Labb2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leowic-3_Labb2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D76AEAB317F5B6CC0075BA5F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D76AEAB717F5B6CC0075BA5F /* leowic-3_Labb2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "leowic-3_Labb2-Info.plist"; sourceTree = "<group>"; };
+		D76AEAB917F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D76AEABB17F5B6CC0075BA5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D76AEABD17F5B6CC0075BA5F /* leowic-3_Labb2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leowic-3_Labb2-Prefix.pch"; sourceTree = "<group>"; };
+		D76AEABE17F5B6CC0075BA5F /* AldAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AldAppDelegate.h; sourceTree = "<group>"; };
+		D76AEABF17F5B6CC0075BA5F /* AldAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AldAppDelegate.m; sourceTree = "<group>"; };
+		D76AEAC117F5B6CC0075BA5F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D76AEAC317F5B6CC0075BA5F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D76AEAC817F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D76AEACB17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = leowic_3_Labb2.xcdatamodel; sourceTree = "<group>"; };
+		D76AEACD17F5B6CC0075BA5F /* AldMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AldMasterViewController.h; sourceTree = "<group>"; };
+		D76AEACE17F5B6CC0075BA5F /* AldMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AldMasterViewController.m; sourceTree = "<group>"; };
+		D76AEAD017F5B6CC0075BA5F /* AldDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AldDetailViewController.h; sourceTree = "<group>"; };
+		D76AEAD117F5B6CC0075BA5F /* AldDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AldDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D76AEAA717F5B6CC0075BA5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */,
+				D76AEAB017F5B6CC0075BA5F /* Foundation.framework in Frameworks */,
+				D76AEAB217F5B6CC0075BA5F /* CoreGraphics.framework in Frameworks */,
+				D76AEAB417F5B6CC0075BA5F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D76AEAA117F5B6CC0075BA5F = {
+			isa = PBXGroup;
+			children = (
+				D76AEAB517F5B6CC0075BA5F /* leowic-3_Labb2 */,
+				D76AEAAC17F5B6CC0075BA5F /* Frameworks */,
+				D76AEAAB17F5B6CC0075BA5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D76AEAAB17F5B6CC0075BA5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D76AEAAA17F5B6CC0075BA5F /* leowic-3_Labb2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D76AEAAC17F5B6CC0075BA5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */,
+				D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */,
+				D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */,
+				D76AEAB317F5B6CC0075BA5F /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D76AEAB517F5B6CC0075BA5F /* leowic-3_Labb2 */ = {
+			isa = PBXGroup;
+			children = (
+				D76AEABE17F5B6CC0075BA5F /* AldAppDelegate.h */,
+				D76AEABF17F5B6CC0075BA5F /* AldAppDelegate.m */,
+				D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */,
+				D76AEACD17F5B6CC0075BA5F /* AldMasterViewController.h */,
+				D76AEACE17F5B6CC0075BA5F /* AldMasterViewController.m */,
+				D76AEAD017F5B6CC0075BA5F /* AldDetailViewController.h */,
+				D76AEAD117F5B6CC0075BA5F /* AldDetailViewController.m */,
+				D76AEACA17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld */,
+				D76AEAB617F5B6CC0075BA5F /* Supporting Files */,
+			);
+			path = "leowic-3_Labb2";
+			sourceTree = "<group>";
+		};
+		D76AEAB617F5B6CC0075BA5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D76AEAB717F5B6CC0075BA5F /* leowic-3_Labb2-Info.plist */,
+				D76AEAB817F5B6CC0075BA5F /* InfoPlist.strings */,
+				D76AEABB17F5B6CC0075BA5F /* main.m */,
+				D76AEABD17F5B6CC0075BA5F /* leowic-3_Labb2-Prefix.pch */,
+				D76AEAC117F5B6CC0075BA5F /* Default.png */,
+				D76AEAC317F5B6CC0075BA5F /* Default@2x.png */,
+				D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D76AEAA917F5B6CC0075BA5F /* leowic-3_Labb2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D76AEAD517F5B6CC0075BA5F /* Build configuration list for PBXNativeTarget "leowic-3_Labb2" */;
+			buildPhases = (
+				D76AEAA617F5B6CC0075BA5F /* Sources */,
+				D76AEAA717F5B6CC0075BA5F /* Frameworks */,
+				D76AEAA817F5B6CC0075BA5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "leowic-3_Labb2";
+			productName = "leowic-3_Labb2";
+			productReference = D76AEAAA17F5B6CC0075BA5F /* leowic-3_Labb2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D76AEAA217F5B6CC0075BA5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Ald;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = LTU;
+			};
+			buildConfigurationList = D76AEAA517F5B6CC0075BA5F /* Build configuration list for PBXProject "leowic-3_Labb2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D76AEAA117F5B6CC0075BA5F;
+			productRefGroup = D76AEAAB17F5B6CC0075BA5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D76AEAA917F5B6CC0075BA5F /* leowic-3_Labb2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D76AEAA817F5B6CC0075BA5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76AEABA17F5B6CC0075BA5F /* InfoPlist.strings in Resources */,
+				D76AEAC217F5B6CC0075BA5F /* Default.png in Resources */,
+				D76AEAC417F5B6CC0075BA5F /* Default@2x.png in Resources */,
+				D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */,
+				D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D76AEAA617F5B6CC0075BA5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76AEABC17F5B6CC0075BA5F /* main.m in Sources */,
+				D76AEAC017F5B6CC0075BA5F /* AldAppDelegate.m in Sources */,
+				D76AEACC17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld in Sources */,
+				D76AEACF17F5B6CC0075BA5F /* AldMasterViewController.m in Sources */,
+				D76AEAD217F5B6CC0075BA5F /* AldDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D76AEAB817F5B6CC0075BA5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76AEAB917F5B6CC0075BA5F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76AEAC817F5B6CC0075BA5F /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D76AEAD317F5B6CC0075BA5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D76AEAD417F5B6CC0075BA5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D76AEAD617F5B6CC0075BA5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "leowic-3_Labb2/leowic-3_Labb2-Prefix.pch";
+				INFOPLIST_FILE = "leowic-3_Labb2/leowic-3_Labb2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D76AEAD717F5B6CC0075BA5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "leowic-3_Labb2/leowic-3_Labb2-Prefix.pch";
+				INFOPLIST_FILE = "leowic-3_Labb2/leowic-3_Labb2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D76AEAA517F5B6CC0075BA5F /* Build configuration list for PBXProject "leowic-3_Labb2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D76AEAD317F5B6CC0075BA5F /* Debug */,
+				D76AEAD417F5B6CC0075BA5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D76AEAD517F5B6CC0075BA5F /* Build configuration list for PBXNativeTarget "leowic-3_Labb2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D76AEAD617F5B6CC0075BA5F /* Debug */,
+				D76AEAD717F5B6CC0075BA5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D76AEACA17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D76AEACB17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodel */,
+			);
+			currentVersion = D76AEACB17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodel */;
+			path = leowic_3_Labb2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D76AEAA217F5B6CC0075BA5F /* Project object */;
+}
