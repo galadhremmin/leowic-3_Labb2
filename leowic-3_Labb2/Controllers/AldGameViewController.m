@@ -6,21 +6,21 @@
 //  Copyright (c) 2013 LTU. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "AldGameViewController.h"
 #import "AldModel.h"
 #import "AldBrickView.h"
 
 @interface AldGameViewController ()
-@property (nonatomic, strong) AldModel *model;
-@property (nonatomic, weak) UIView *paddleView;
-@property (nonatomic) float touchBeginXCoordinate;
+@property (nonatomic, strong) CADisplayLink *displayLink;
+@property (nonatomic, strong) AldModel      *model;
+@property (nonatomic, weak)   UIView        *paddleView;
+@property (nonatomic, weak)   UIView        *ballView;
+@property (nonatomic)         CFTimeInterval lastRender;
+@property (nonatomic)         float          touchBeginXCoordinate;
 @end
 
 @implementation AldGameViewController
-
-@synthesize model = _model;
-@synthesize paddleView = _paddleView;
-@synthesize touchBeginXCoordinate = _touchBeginXCoordinate;
 
 - (void)awakeFromNib
 {
@@ -37,22 +37,48 @@
                                self.view.frame.origin.x + gap,
                                self.view.frame.origin.y + gap,
                                self.view.frame.size.width - 2*gap,
-                               self.view.frame.size.height - 2*gap -
+                               self.view.frame.size.height - gap -
                                [[UIApplication sharedApplication] statusBarFrame].size.height -
                                self.navigationController.navigationBar.frame.size.height);
 
     _model = [[AldModel alloc] initWithDelegate:self];
     [_model loadWithBounds:canvas];
+    
+    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop)];
+    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [_displayLink invalidate];
+    _displayLink = nil;
     
+    [_model save];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark Game loop
+-(void) gameLoop
+{
+    CFTimeInterval now = [_displayLink timestamp];
+    
+    if (_lastRender == 0) {
+        _lastRender = now;
+        return;
+    }
+
+    CFTimeInterval dt = now - _lastRender;
+    [_model update:dt];
+    
+    [_ballView setFrame:_model.ball.frame];
+    [_paddleView setFrame:_model.paddle.frame];
+    
+    _lastRender = now;
 }
 
 #pragma mark View initialization
@@ -67,11 +93,19 @@
         [self.view addSubview:view];
     }
 
-    UIView *paddleView = [[UIView alloc] initWithFrame:_model.paddle];
+    // Create the paddle view
+    UIView *paddleView = [[UIView alloc] initWithFrame:_model.paddle.frame];
     [paddleView setBackgroundColor: [UIColor redColor]];
     
     [self.view addSubview:paddleView];
     _paddleView = paddleView;
+    
+    // Create the ball view
+    UIView *ballView = [[UIView alloc] initWithFrame:_model.ball.frame];
+    [ballView setBackgroundColor:[UIColor blueColor]];
+    
+    [self.view addSubview:ballView];
+    _ballView = ballView;
 }
 
 #pragma mark Touches
@@ -105,17 +139,7 @@
     
     UITouch *touch = [touches anyObject];
     CGFloat x = [touch locationInView:self.view].x - _touchBeginXCoordinate;
-    
-    if (x < _model.bounds.origin.x)
-        x = _model.bounds.origin.x;
-    
-    if (x > _model.bounds.origin.x + _model.bounds.size.width - _paddleView.bounds.size.width)
-        x = _model.bounds.origin.x + _model.bounds.size.width - _paddleView.bounds.size.width;
-    
-    CGRect frame = _paddleView.frame;
-    frame.origin.x = x;
-    
-    [_paddleView setFrame:frame];
+    [_model.paddle moveWithinFrame:_model.bounds toNewXPosition:x];
 }
 
 #pragma mark Model delegates

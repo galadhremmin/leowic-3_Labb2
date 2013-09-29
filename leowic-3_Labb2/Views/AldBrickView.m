@@ -28,10 +28,31 @@
                         change: (NSDictionary *)change
                        context: (void *)context
 {
-    AldBrick *brick = (AldBrick *)object;
-    
     if ([keyPath isEqualToString:@"broken"]) {
-        self.hidden = brick.broken;
+        // Weak pointers because ARC automatically retains within blocks
+        __weak AldBrick *brick = (AldBrick *)object;
+        __weak UIView *animatedView = self;
+        
+        if (brick.broken) {
+            [UIView animateWithDuration: 1.0
+                                  delay: 0.0
+                                options: UIViewAnimationOptionCurveEaseIn
+                             animations: ^{
+                                 // Fade out the brick
+                                 animatedView.alpha = 0;
+                                 
+                                 // Reduce the brick to nothing
+                                 CGRect bounds = animatedView.bounds;
+                                 bounds.size.width = 0;
+                                 bounds.size.height = 0;
+                                 
+                                 [animatedView setBounds:bounds];
+                             }
+                             completion: ^(BOOL finished){
+                                 // Now, when is completed, hide the view
+                                 animatedView.hidden = YES;
+                             }];
+        }
     }
 }
 /*

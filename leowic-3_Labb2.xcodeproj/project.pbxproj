@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */ = {isa = PBXBuildFile; fileRef = D74DA29717F84FAD00DBE019 /* AldBall.m */; };
+		D74DA29A17F85A4200DBE019 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74DA29917F85A4200DBE019 /* QuartzCore.framework */; };
 		D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */; };
 		D76AEAB017F5B6CC0075BA5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */; };
 		D76AEAB217F5B6CC0075BA5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */; };
@@ -17,6 +19,7 @@
 		D76AEAC417F5B6CC0075BA5F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC317F5B6CC0075BA5F /* Default@2x.png */; };
 		D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */; };
 		D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */; };
+		D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEEC617F8769D0024EA07 /* AldPaddle.m */; };
 		D7FDC71817F7912E00D2D8F2 /* AldGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71717F7912E00D2D8F2 /* AldGameView.m */; };
 		D7FDC71B17F791C300D2D8F2 /* AldGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */; };
 		D7FDC72517F824B200D2D8F2 /* AldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC72417F824B100D2D8F2 /* AldModel.m */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D74DA29617F84FAD00DBE019 /* AldBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldBall.h; sourceTree = "<group>"; };
+		D74DA29717F84FAD00DBE019 /* AldBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldBall.m; sourceTree = "<group>"; };
+		D74DA29917F85A4200DBE019 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D76AEAAA17F5B6CC0075BA5F /* leowic-3_Labb2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "leowic-3_Labb2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +45,8 @@
 		D76AEAC317F5B6CC0075BA5F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D76AEAC817F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D76AEEC517F8769D0024EA07 /* AldPaddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldPaddle.h; sourceTree = "<group>"; };
+		D76AEEC617F8769D0024EA07 /* AldPaddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldPaddle.m; sourceTree = "<group>"; };
 		D7FDC71617F7912E00D2D8F2 /* AldGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameView.h; sourceTree = "<group>"; };
 		D7FDC71717F7912E00D2D8F2 /* AldGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldGameView.m; sourceTree = "<group>"; };
 		D7FDC71917F791C300D2D8F2 /* AldGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameViewController.h; sourceTree = "<group>"; };
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74DA29A17F85A4200DBE019 /* QuartzCore.framework in Frameworks */,
 				D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */,
 				D76AEAB017F5B6CC0075BA5F /* Foundation.framework in Frameworks */,
 				D76AEAB217F5B6CC0075BA5F /* CoreGraphics.framework in Frameworks */,
@@ -86,6 +95,7 @@
 		D76AEAAC17F5B6CC0075BA5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D74DA29917F85A4200DBE019 /* QuartzCore.framework */,
 				D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */,
 				D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */,
 				D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */,
@@ -165,6 +175,10 @@
 			children = (
 				D7FDC72817F830CF00D2D8F2 /* AldBrick.h */,
 				D7FDC72917F830CF00D2D8F2 /* AldBrick.m */,
+				D74DA29617F84FAD00DBE019 /* AldBall.h */,
+				D74DA29717F84FAD00DBE019 /* AldBall.m */,
+				D76AEEC517F8769D0024EA07 /* AldPaddle.h */,
+				D76AEEC617F8769D0024EA07 /* AldPaddle.m */,
 			);
 			path = Entitites;
 			sourceTree = "<group>";
@@ -243,6 +257,8 @@
 				D7FDC72517F824B200D2D8F2 /* AldModel.m in Sources */,
 				D7FDC72A17F830CF00D2D8F2 /* AldBrick.m in Sources */,
 				D7FDC72D17F8387100D2D8F2 /* AldBrickView.m in Sources */,
+				D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */,
+				D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

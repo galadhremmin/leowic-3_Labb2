@@ -10,10 +10,6 @@
 
 @implementation AldBrick
 
-@synthesize frame = _frame;
-@synthesize broken = _broken;
-@synthesize ID = _ID;
-
 -(id) initWithID: (int)ID andFrame: (CGRect)frame
 {
     self = [super init];
