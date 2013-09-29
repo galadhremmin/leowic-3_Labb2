@@ -10,7 +10,6 @@
 		D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */; };
 		D76AEAB017F5B6CC0075BA5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */; };
 		D76AEAB217F5B6CC0075BA5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */; };
-		D76AEAB417F5B6CC0075BA5F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAB317F5B6CC0075BA5F /* CoreData.framework */; };
 		D76AEABA17F5B6CC0075BA5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAB817F5B6CC0075BA5F /* InfoPlist.strings */; };
 		D76AEABC17F5B6CC0075BA5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEABB17F5B6CC0075BA5F /* main.m */; };
 		D76AEAC017F5B6CC0075BA5F /* AldAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEABF17F5B6CC0075BA5F /* AldAppDelegate.m */; };
@@ -18,9 +17,11 @@
 		D76AEAC417F5B6CC0075BA5F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC317F5B6CC0075BA5F /* Default@2x.png */; };
 		D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */; };
 		D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */; };
-		D76AEACC17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D76AEACA17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld */; };
-		D76AEACF17F5B6CC0075BA5F /* AldMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEACE17F5B6CC0075BA5F /* AldMasterViewController.m */; };
-		D76AEAD217F5B6CC0075BA5F /* AldDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEAD117F5B6CC0075BA5F /* AldDetailViewController.m */; };
+		D7FDC71817F7912E00D2D8F2 /* AldGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71717F7912E00D2D8F2 /* AldGameView.m */; };
+		D7FDC71B17F791C300D2D8F2 /* AldGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */; };
+		D7FDC72517F824B200D2D8F2 /* AldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC72417F824B100D2D8F2 /* AldModel.m */; };
+		D7FDC72A17F830CF00D2D8F2 /* AldBrick.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC72917F830CF00D2D8F2 /* AldBrick.m */; };
+		D7FDC72D17F8387100D2D8F2 /* AldBrickView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC72C17F8387100D2D8F2 /* AldBrickView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +29,6 @@
 		D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D76AEAB317F5B6CC0075BA5F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D76AEAB717F5B6CC0075BA5F /* leowic-3_Labb2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "leowic-3_Labb2-Info.plist"; sourceTree = "<group>"; };
 		D76AEAB917F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D76AEABB17F5B6CC0075BA5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,11 +39,17 @@
 		D76AEAC317F5B6CC0075BA5F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D76AEAC817F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D76AEACB17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = leowic_3_Labb2.xcdatamodel; sourceTree = "<group>"; };
-		D76AEACD17F5B6CC0075BA5F /* AldMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AldMasterViewController.h; sourceTree = "<group>"; };
-		D76AEACE17F5B6CC0075BA5F /* AldMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AldMasterViewController.m; sourceTree = "<group>"; };
-		D76AEAD017F5B6CC0075BA5F /* AldDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AldDetailViewController.h; sourceTree = "<group>"; };
-		D76AEAD117F5B6CC0075BA5F /* AldDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AldDetailViewController.m; sourceTree = "<group>"; };
+		D7FDC71617F7912E00D2D8F2 /* AldGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameView.h; sourceTree = "<group>"; };
+		D7FDC71717F7912E00D2D8F2 /* AldGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldGameView.m; sourceTree = "<group>"; };
+		D7FDC71917F791C300D2D8F2 /* AldGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameViewController.h; sourceTree = "<group>"; };
+		D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldGameViewController.m; sourceTree = "<group>"; };
+		D7FDC72217F8239400D2D8F2 /* AldModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AldModelDelegate.h; sourceTree = "<group>"; };
+		D7FDC72317F824B100D2D8F2 /* AldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldModel.h; sourceTree = "<group>"; };
+		D7FDC72417F824B100D2D8F2 /* AldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldModel.m; sourceTree = "<group>"; };
+		D7FDC72817F830CF00D2D8F2 /* AldBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldBrick.h; sourceTree = "<group>"; };
+		D7FDC72917F830CF00D2D8F2 /* AldBrick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldBrick.m; sourceTree = "<group>"; };
+		D7FDC72B17F8387100D2D8F2 /* AldBrickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldBrickView.h; sourceTree = "<group>"; };
+		D7FDC72C17F8387100D2D8F2 /* AldBrickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldBrickView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +60,6 @@
 				D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */,
 				D76AEAB017F5B6CC0075BA5F /* Foundation.framework in Frameworks */,
 				D76AEAB217F5B6CC0075BA5F /* CoreGraphics.framework in Frameworks */,
-				D76AEAB417F5B6CC0075BA5F /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +89,6 @@
 				D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */,
 				D76AEAAF17F5B6CC0075BA5F /* Foundation.framework */,
 				D76AEAB117F5B6CC0075BA5F /* CoreGraphics.framework */,
-				D76AEAB317F5B6CC0075BA5F /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,14 +96,12 @@
 		D76AEAB517F5B6CC0075BA5F /* leowic-3_Labb2 */ = {
 			isa = PBXGroup;
 			children = (
+				D7FDC71517F7905200D2D8F2 /* Storyboards */,
+				D7FDC71417F7903F00D2D8F2 /* Views */,
+				D7FDC70E17F78D0D00D2D8F2 /* Controllers */,
+				D7FDC70F17F78D0D00D2D8F2 /* Models */,
 				D76AEABE17F5B6CC0075BA5F /* AldAppDelegate.h */,
 				D76AEABF17F5B6CC0075BA5F /* AldAppDelegate.m */,
-				D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */,
-				D76AEACD17F5B6CC0075BA5F /* AldMasterViewController.h */,
-				D76AEACE17F5B6CC0075BA5F /* AldMasterViewController.m */,
-				D76AEAD017F5B6CC0075BA5F /* AldDetailViewController.h */,
-				D76AEAD117F5B6CC0075BA5F /* AldDetailViewController.m */,
-				D76AEACA17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld */,
 				D76AEAB617F5B6CC0075BA5F /* Supporting Files */,
 			);
 			path = "leowic-3_Labb2";
@@ -117,6 +119,54 @@
 				D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7FDC70E17F78D0D00D2D8F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDC71917F791C300D2D8F2 /* AldGameViewController.h */,
+				D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D7FDC70F17F78D0D00D2D8F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDC72717F830C000D2D8F2 /* Entitites */,
+				D7FDC72217F8239400D2D8F2 /* AldModelDelegate.h */,
+				D7FDC72317F824B100D2D8F2 /* AldModel.h */,
+				D7FDC72417F824B100D2D8F2 /* AldModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7FDC71417F7903F00D2D8F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDC71617F7912E00D2D8F2 /* AldGameView.h */,
+				D7FDC71717F7912E00D2D8F2 /* AldGameView.m */,
+				D7FDC72B17F8387100D2D8F2 /* AldBrickView.h */,
+				D7FDC72C17F8387100D2D8F2 /* AldBrickView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D7FDC71517F7905200D2D8F2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D7FDC72717F830C000D2D8F2 /* Entitites */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDC72817F830CF00D2D8F2 /* AldBrick.h */,
+				D7FDC72917F830CF00D2D8F2 /* AldBrick.m */,
+			);
+			path = Entitites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +238,11 @@
 			files = (
 				D76AEABC17F5B6CC0075BA5F /* main.m in Sources */,
 				D76AEAC017F5B6CC0075BA5F /* AldAppDelegate.m in Sources */,
-				D76AEACC17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld in Sources */,
-				D76AEACF17F5B6CC0075BA5F /* AldMasterViewController.m in Sources */,
-				D76AEAD217F5B6CC0075BA5F /* AldDetailViewController.m in Sources */,
+				D7FDC71817F7912E00D2D8F2 /* AldGameView.m in Sources */,
+				D7FDC71B17F791C300D2D8F2 /* AldGameViewController.m in Sources */,
+				D7FDC72517F824B200D2D8F2 /* AldModel.m in Sources */,
+				D7FDC72A17F830CF00D2D8F2 /* AldBrick.m in Sources */,
+				D7FDC72D17F8387100D2D8F2 /* AldBrickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,21 +365,9 @@
 				D76AEAD717F5B6CC0075BA5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D76AEACA17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D76AEACB17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodel */,
-			);
-			currentVersion = D76AEACB17F5B6CC0075BA5F /* leowic_3_Labb2.xcdatamodel */;
-			path = leowic_3_Labb2.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D76AEAA217F5B6CC0075BA5F /* Project object */;
 }
