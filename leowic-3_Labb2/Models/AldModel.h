@@ -11,14 +11,15 @@
 #import "AldBall.h"
 #import "AldPaddle.h"
 
-#define kDefaultNumberOfColumnsOfBricks  (4)
-#define kDefaultNumberOfRowsOfBricks     (6)
-#define kDefaultGapInPercentage          (2)
-#define kDefaultHeightInPercentage       (3)
-#define kDefaultPaddleWidthInPercentage  (20)
-#define kDefaultBallDiameterInPercentage (5)
-#define kDefaultBallVelocityInPercentage (30)
-#define kDefaultBallDirectionInDegrees   (45)
+#define kDefaultNumberOfColumnsOfBricks   (4)
+#define kDefaultNumberOfRowsOfBricks      (6)
+#define kDefaultGapInPercentage           (2)
+#define kDefaultHeightInPercentage        (3)
+#define kDefaultPaddleWidthInPercentage   (20)
+#define kDefaultBallDiameterInPercentage  (5)
+#define kDefaultBallVelocityInPercentage  (30)
+#define kDefaultBallDirectionInDegreesMax (135)
+#define kDefaultBallDirectionInDegreesMin (45)
 
 @interface AldModel : NSObject
 
@@ -35,6 +36,7 @@
 -(id)   initWithDelegate: (NSObject<AldModelDelegate> *)delegate;
 -(void) loadWithBounds:   (CGRect)bounds;
 -(void) update:           (CFTimeInterval)dt;
+-(void) delete;
 -(void) save;
 
 @end

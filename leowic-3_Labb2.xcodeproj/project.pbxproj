@@ -24,6 +24,7 @@
 		D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7C2D75D17FB2D4A00014263 /* background.jpg */; };
 		D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76117FB306A00014263 /* UIImageScaling.m */; };
 		D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76417FB333D00014263 /* AldScoreView.m */; };
+		D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76D17FB3E4100014263 /* AldChoiceSelectionViewController.m */; };
 		D7FDC71817F7912E00D2D8F2 /* AldGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71717F7912E00D2D8F2 /* AldGameView.m */; };
 		D7FDC71B17F791C300D2D8F2 /* AldGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */; };
 		D7FDC72517F824B200D2D8F2 /* AldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC72417F824B100D2D8F2 /* AldModel.m */; };
@@ -58,6 +59,8 @@
 		D7C2D76117FB306A00014263 /* UIImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageScaling.m; sourceTree = "<group>"; };
 		D7C2D76317FB333D00014263 /* AldScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldScoreView.h; sourceTree = "<group>"; };
 		D7C2D76417FB333D00014263 /* AldScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldScoreView.m; sourceTree = "<group>"; };
+		D7C2D76C17FB3E4100014263 /* AldChoiceSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldChoiceSelectionViewController.h; sourceTree = "<group>"; };
+		D7C2D76D17FB3E4100014263 /* AldChoiceSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldChoiceSelectionViewController.m; sourceTree = "<group>"; };
 		D7FDC71617F7912E00D2D8F2 /* AldGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameView.h; sourceTree = "<group>"; };
 		D7FDC71717F7912E00D2D8F2 /* AldGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldGameView.m; sourceTree = "<group>"; };
 		D7FDC71917F791C300D2D8F2 /* AldGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameViewController.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */,
 				D73AAB8317FAF03000DC2B59 /* AldSettingsViewController.h */,
 				D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */,
+				D7C2D76C17FB3E4100014263 /* AldChoiceSelectionViewController.h */,
+				D7C2D76D17FB3E4100014263 /* AldChoiceSelectionViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */,
 				D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */,
 				D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */,
+				D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

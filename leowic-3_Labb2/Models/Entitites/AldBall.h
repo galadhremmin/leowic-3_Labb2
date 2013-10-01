@@ -16,6 +16,6 @@
 
 -(id) initWithFrame: (CGRect)frame direction: (CGFloat)direction andVelocity: (CGFloat)velocity;
 -(BOOL) moveWithinFrame: (CGRect)frame withinFractionsOfASecond:(CFTimeInterval)dt;
--(void) reflect;
+-(void) reflectAgainstSurfaceWithAngle: (CGFloat)angle;
 
 @end

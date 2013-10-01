@@ -58,7 +58,7 @@
         
             [self award:1];
             [brick setBroken:YES];
-            [_ball reflect];
+            [_ball reflectAgainstSurfaceWithAngle:M_PI];
             reflected = YES;
             
             break;
@@ -70,20 +70,24 @@
         CGRect intersection = CGRectIntersection(_ball.frame, _paddle.frame);
         
         NSLog(@"(%f, %f)", intersection.origin.x, intersection.origin.y);
-        [_ball reflect];
+        [_ball reflectAgainstSurfaceWithAngle:M_PI];
+    }
+}
+
+-(void) delete
+{
+    // Clear existing configuration
+    NSDictionary *keys = [_defaults dictionaryRepresentation];
+    for (id key in keys) {
+        [_defaults removeObjectForKey:key];
     }
 }
 
 -(void) save
 {
     [self.delegate modelWillSave:self];
-    
-    // Clear existing configuration
-    NSDictionary *keys = [_defaults dictionaryRepresentation];
-    for (id key in keys) {
-        [_defaults removeObjectForKey:key];
-    }
-    
+    [self delete];
+   
     // Save the bricks' state
     for (AldBrick *brick in _bricks) {
         NSString *key = [NSString stringWithFormat:@"brick%d", brick.ID];
@@ -171,11 +175,13 @@
 
 -(void) initBallWithBounds: (CGRect)bounds
 {
+    srand(time(NULL));
+    
     CGFloat defaultR = kDefaultBallDiameterInPercentage * bounds.size.width * 0.01 * 0.5,
             defaultV = kDefaultBallVelocityInPercentage * bounds.size.width * 0.01,
             defaultX = (bounds.size.width - defaultR*2) * 0.5,
             defaultY = (bounds.size.height - defaultR*2) * 0.5,
-            defaultD = kDefaultBallDirectionInDegrees * M_PI / 180.0f,
+            defaultD = kDefaultBallDirectionInDegreesMin + (rand() % (kDefaultBallDirectionInDegreesMax - kDefaultBallDirectionInDegreesMin)) * M_PI / 180.0f,
             x, y, d, v;
     
     x = [self readFloatForKey:@"ballX" onZeroReturn:defaultX];
