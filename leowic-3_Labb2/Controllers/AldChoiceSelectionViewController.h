@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AldChoiceSelectionViewController : UITableViewController
+@interface AldChoiceSelectionViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *choices;
 @property (nonatomic, strong) id selectedChoice;

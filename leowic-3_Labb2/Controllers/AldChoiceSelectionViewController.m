@@ -59,14 +59,18 @@
 
 -(UITableViewCell *) tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ChoiceCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"CellChoice";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if( cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
     id choice = [_choices objectAtIndex:[indexPath row]];
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", choice]];
     cell.accessoryType = choice == _selectedChoice
         ? UITableViewCellAccessoryCheckmark
-        : UITableViewCellAccessoryNone;
+        : UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
