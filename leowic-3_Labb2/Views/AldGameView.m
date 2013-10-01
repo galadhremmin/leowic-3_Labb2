@@ -7,25 +7,23 @@
 //
 
 #import "AldGameView.h"
+#import "UIImageScaling.h"
 
 @implementation AldGameView
 
-- (id)initWithFrame:(CGRect)frame
+-(void) awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
+    [self applyBackground];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void) applyBackground
 {
-    // Drawing code
+    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+    NSString *imagePath  = [resourcePath stringByAppendingPathComponent:@"background.jpg"];
+    
+    UIImage *backgroundNebula = [[UIImage imageWithContentsOfFile:imagePath] scaleToSize:self.frame.size];
+
+    [self setBackgroundColor:[UIColor colorWithPatternImage:backgroundNebula]];
 }
-*/
 
 @end

@@ -21,6 +21,9 @@
 		D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */; };
 		D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */; };
 		D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEEC617F8769D0024EA07 /* AldPaddle.m */; };
+		D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7C2D75D17FB2D4A00014263 /* background.jpg */; };
+		D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76117FB306A00014263 /* UIImageScaling.m */; };
+		D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76417FB333D00014263 /* AldScoreView.m */; };
 		D7FDC71817F7912E00D2D8F2 /* AldGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71717F7912E00D2D8F2 /* AldGameView.m */; };
 		D7FDC71B17F791C300D2D8F2 /* AldGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */; };
 		D7FDC72517F824B200D2D8F2 /* AldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC72417F824B100D2D8F2 /* AldModel.m */; };
@@ -50,6 +53,11 @@
 		D76AEAC817F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D76AEEC517F8769D0024EA07 /* AldPaddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldPaddle.h; sourceTree = "<group>"; };
 		D76AEEC617F8769D0024EA07 /* AldPaddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldPaddle.m; sourceTree = "<group>"; };
+		D7C2D75D17FB2D4A00014263 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		D7C2D76017FB306A00014263 /* UIImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageScaling.h; sourceTree = "<group>"; };
+		D7C2D76117FB306A00014263 /* UIImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageScaling.m; sourceTree = "<group>"; };
+		D7C2D76317FB333D00014263 /* AldScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldScoreView.h; sourceTree = "<group>"; };
+		D7C2D76417FB333D00014263 /* AldScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldScoreView.m; sourceTree = "<group>"; };
 		D7FDC71617F7912E00D2D8F2 /* AldGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameView.h; sourceTree = "<group>"; };
 		D7FDC71717F7912E00D2D8F2 /* AldGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldGameView.m; sourceTree = "<group>"; };
 		D7FDC71917F791C300D2D8F2 /* AldGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldGameViewController.h; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 		D76AEAB517F5B6CC0075BA5F /* leowic-3_Labb2 */ = {
 			isa = PBXGroup;
 			children = (
+				D7C2D75F17FB303300014263 /* Extensions */,
+				D7C2D75C17FB2D4000014263 /* Images */,
 				D7FDC71517F7905200D2D8F2 /* Storyboards */,
 				D7FDC71417F7903F00D2D8F2 /* Views */,
 				D7FDC70E17F78D0D00D2D8F2 /* Controllers */,
@@ -132,6 +142,23 @@
 				D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7C2D75C17FB2D4000014263 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D7C2D75D17FB2D4A00014263 /* background.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D7C2D75F17FB303300014263 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7C2D76017FB306A00014263 /* UIImageScaling.h */,
+				D7C2D76117FB306A00014263 /* UIImageScaling.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D7FDC70E17F78D0D00D2D8F2 /* Controllers */ = {
@@ -163,6 +190,8 @@
 				D7FDC71717F7912E00D2D8F2 /* AldGameView.m */,
 				D7FDC72B17F8387100D2D8F2 /* AldBrickView.h */,
 				D7FDC72C17F8387100D2D8F2 /* AldBrickView.m */,
+				D7C2D76317FB333D00014263 /* AldScoreView.h */,
+				D7C2D76417FB333D00014263 /* AldScoreView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +274,7 @@
 				D76AEAC417F5B6CC0075BA5F /* Default@2x.png in Resources */,
 				D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */,
 				D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */,
+				D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +295,8 @@
 				D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */,
 				D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */,
 				D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */,
+				D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */,
+				D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

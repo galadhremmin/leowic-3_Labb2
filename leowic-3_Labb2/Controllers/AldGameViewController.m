@@ -10,6 +10,7 @@
 #import "AldGameViewController.h"
 #import "AldModel.h"
 #import "AldBrickView.h"
+#import "AldScoreView.h"
 
 @interface AldGameViewController ()
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -115,6 +116,11 @@
     
     [self.view addSubview:ballView];
     _ballView = ballView;
+    
+    // Create score view
+    CGRect scoreRect = CGRectMake(0, _model.bounds.size.height + _model.bounds.origin.y - 30, 30, 30);
+    AldScoreView *scoreView = [[AldScoreView alloc] initWithFrame:scoreRect listeningToModel:_model];
+    [self.view addSubview:scoreView];
 }
 
 #pragma mark Touches

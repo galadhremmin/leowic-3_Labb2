@@ -12,6 +12,7 @@
 @interface AldModel ()
 
 @property(nonatomic, weak) NSUserDefaults *defaults;
+@property(nonatomic) int score;
 
 @end
 
@@ -190,14 +191,17 @@
 #pragma mark Score methods
 -(void) award: (int)score
 {
-    _score += score;
+    [self setScore: score + _score];
 }
 
 -(void) penalize: (int)score
 {
-    _score -= score;
-    if (_score < 0)
-        _score = 0;
+    int newScore = _score - score;
+    if (newScore < 0) {
+        newScore = 0;
+    }
+    
+    [self setScore:newScore];
 }
 
 #pragma mark Helper methods for persistance
