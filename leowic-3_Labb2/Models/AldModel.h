@@ -24,13 +24,13 @@
 
 @property (weak, nonatomic)   NSObject<AldModelDelegate> *delegate;
 
-@property (nonatomic, strong) NSMutableArray             *bricks;
-@property (nonatomic, strong) AldBall                    *ball;
-@property (nonatomic)         AldPaddle                  *paddle;
-@property (nonatomic)         int                         score;
-@property (nonatomic)         CGRect                      bounds;
-@property(nonatomic)          int                         brickColumns;
-@property(nonatomic)          int                         brickRows;
+@property (nonatomic, strong, readonly) NSMutableArray *bricks;
+@property (nonatomic, strong, readonly) AldBall        *ball;
+@property (nonatomic, readonly)         AldPaddle      *paddle;
+@property (nonatomic, readonly)         CGRect          bounds;
+@property (nonatomic, readonly)         int             score;
+@property (nonatomic, readonly)         int             brickColumns;
+@property (nonatomic, readonly)         int             brickRows;
 
 -(id)   initWithDelegate: (NSObject<AldModelDelegate> *)delegate;
 -(void) loadWithBounds:   (CGRect)bounds;

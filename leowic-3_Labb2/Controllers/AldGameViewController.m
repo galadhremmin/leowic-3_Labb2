@@ -62,6 +62,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark Segue management
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"settings"]) {
+        id controller = [segue destinationViewController];
+        [controller setModel:_model];
+    }
+}
+
 #pragma mark Game loop
 -(void) gameLoop
 {
@@ -143,10 +152,6 @@
 }
 
 #pragma mark Model delegates
-
--(void) modelInitializedWithModel: (id)model
-{
-}
 
 -(void) modelLoadedWithModel: (id)model
 {

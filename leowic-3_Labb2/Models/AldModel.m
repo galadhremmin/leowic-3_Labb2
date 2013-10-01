@@ -13,9 +13,6 @@
 
 @property(nonatomic, weak) NSUserDefaults *defaults;
 
--(int)     readIntegerForKey: (NSString *)key onZeroReturn: (int)onZeroValue;
--(CGFloat) readFloatForKey: (NSString *)key onZeroReturn: (CGFloat)onZeroValue;
-
 @end
 
 @implementation AldModel
@@ -26,8 +23,6 @@
     if (self) {
         _delegate = delegate;
         _defaults = [NSUserDefaults standardUserDefaults];
-        
-        [delegate modelInitializedWithModel:self];
     }
     return self;
 }
@@ -60,6 +55,7 @@
                 continue;
             }
         
+            [self award:1];
             [brick setBroken:YES];
             [_ball reflect];
             reflected = YES;
@@ -77,7 +73,7 @@
     }
 }
 
--(void)  save
+-(void) save
 {
     [self.delegate modelWillSave:self];
     
@@ -90,7 +86,7 @@
     // Save the bricks' state
     for (AldBrick *brick in _bricks) {
         NSString *key = [NSString stringWithFormat:@"brick%d", brick.ID];
-        [_defaults setInteger:brick.broken forKey:key];
+        [_defaults setInteger:brick.broken ? 1 : 0 forKey:key];
     }
     
     // Save the ball's position
@@ -127,6 +123,9 @@
         brickWidth  = (bounds.size.width - (_brickColumns - 1) * gapSize) / _brickColumns,
         brickHeight = kDefaultHeightInPercentage * 0.01 * bounds.size.height;
     
+    // Reset the score
+    _score = 0;
+    
     for (int i = 1, x = bounds.origin.x, y = bounds.origin.y;
          i <= _brickColumns * _brickRows;
          i += 1) {
@@ -139,6 +138,10 @@
             NSString *key = [NSString stringWithFormat:@"brick%d", i];
             int state = [self readIntegerForKey:key onZeroReturn:0];
             [brick setBroken:state];
+            
+            if (brick.broken) {
+                _score += 1;
+            }
         }
         
         [_bricks addObject:brick];
@@ -182,6 +185,19 @@
     CGRect frame = CGRectMake(x, y, defaultR*2, defaultR*2);
     
     _ball = [[AldBall alloc] initWithFrame:frame direction:d andVelocity:v];
+}
+
+#pragma mark Score methods
+-(void) award: (int)score
+{
+    _score += score;
+}
+
+-(void) penalize: (int)score
+{
+    _score -= score;
+    if (_score < 0)
+        _score = 0;
 }
 
 #pragma mark Helper methods for persistance

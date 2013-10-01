@@ -10,7 +10,6 @@
 
 @protocol AldModelDelegate <NSObject>
 
--(void) modelInitializedWithModel: (id)model;
 -(void) modelLoadedWithModel: (id)model;
 -(void) modelReloadedWithModel: (id)model;
 -(void) modelWillSave: (id)model;

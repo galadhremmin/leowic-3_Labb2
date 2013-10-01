@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */; };
 		D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */ = {isa = PBXBuildFile; fileRef = D74DA29717F84FAD00DBE019 /* AldBall.m */; };
 		D74DA29A17F85A4200DBE019 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74DA29917F85A4200DBE019 /* QuartzCore.framework */; };
 		D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D73AAB8317FAF03000DC2B59 /* AldSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldSettingsViewController.h; sourceTree = "<group>"; };
+		D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldSettingsViewController.m; sourceTree = "<group>"; };
 		D74DA29617F84FAD00DBE019 /* AldBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldBall.h; sourceTree = "<group>"; };
 		D74DA29717F84FAD00DBE019 /* AldBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldBall.m; sourceTree = "<group>"; };
 		D74DA29917F85A4200DBE019 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 			children = (
 				D7FDC71917F791C300D2D8F2 /* AldGameViewController.h */,
 				D7FDC71A17F791C300D2D8F2 /* AldGameViewController.m */,
+				D73AAB8317FAF03000DC2B59 /* AldSettingsViewController.h */,
+				D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				D7FDC72D17F8387100D2D8F2 /* AldBrickView.m in Sources */,
 				D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */,
 				D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */,
+				D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
