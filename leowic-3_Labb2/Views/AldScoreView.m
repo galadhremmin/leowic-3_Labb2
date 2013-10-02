@@ -8,9 +8,13 @@
 
 #import "AldScoreView.h"
 
+@interface AldScoreView()
+@property (nonatomic, weak) AldModel *model;
+@end
+
 @implementation AldScoreView
 
-- (id)initWithFrame:(CGRect)frame listeningToModel: (AldModel *)model
+-(id) initWithFrame:(CGRect)frame listeningToModel: (AldModel *)model
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -20,11 +24,18 @@
         [self setTextAlignment:NSTextAlignmentCenter];
         
         [model addObserver:self forKeyPath:@"score" options:NSKeyValueObservingOptionNew context:nil];
+        _model = model;
     }
     return self;
 }
 
-- (void)observeValueForKeyPath: (NSString *)keyPath
+-(void) removeFromSuperview
+{
+    [_model removeObserver:self forKeyPath:@"score"];
+    [super removeFromSuperview];
+}
+
+-(void) observeValueForKeyPath: (NSString *)keyPath
                       ofObject: (id)object
                         change: (NSDictionary *)change
                        context: (void *)context

@@ -17,7 +17,7 @@
 #define kDefaultHeightInPercentage        (3)
 #define kDefaultPaddleWidthInPercentage   (20)
 #define kDefaultBallDiameterInPercentage  (5)
-#define kDefaultBallVelocityInPercentage  (30)
+#define kDefaultBallVelocityInPixels      (50)
 #define kDefaultBallDirectionInDegreesMax (135)
 #define kDefaultBallDirectionInDegreesMin (45)
 
@@ -26,15 +26,17 @@
 @property (weak, nonatomic)   NSObject<AldModelDelegate> *delegate;
 
 @property (nonatomic, strong, readonly) NSMutableArray *bricks;
-@property (nonatomic, strong, readonly) AldBall        *ball;
+@property (nonatomic, strong)           AldBall        *ball;
 @property (nonatomic, readonly)         AldPaddle      *paddle;
 @property (nonatomic, readonly)         CGRect          bounds;
 @property (nonatomic, readonly)         int             score;
-@property (nonatomic, readonly)         int             brickColumns;
-@property (nonatomic, readonly)         int             brickRows;
+@property (nonatomic)                   int             brickColumns;
+@property (nonatomic)                   int             brickRows;
+@property (nonatomic, readonly)         BOOL            hasBeenModified;
 
 -(id)   initWithDelegate: (NSObject<AldModelDelegate> *)delegate;
 -(void) loadWithBounds:   (CGRect)bounds;
+-(void) reload;
 -(void) update:           (CFTimeInterval)dt;
 -(void) delete;
 -(void) save;

@@ -33,11 +33,40 @@
     _bricks = [NSMutableArray array];
     _bounds = bounds;
     
-    [self initBricksWithBounds: bounds];
-    [self initPaddleWithBounds: bounds];
-    [self initBallWithBounds:   bounds];
-   
+    [self initBricksWithBounds: _bounds];
+    [self initPaddleWithBounds: _bounds];
+    [self initBallWithBounds:   _bounds];
+    [self observeMutableConfiguration];
+    
     [self.delegate modelLoadedWithModel:self];
+}
+
+-(void) reload
+{
+    // Clear all observers
+    [self unobserveMutableConfiguration];
+    
+    // Clear brick states
+    NSDictionary *keys = [_defaults dictionaryRepresentation];
+    for (NSString *key in keys) {
+        if (key.length > 10 && [[key substringToIndex:10] isEqualToString:@"brickState"]) {
+            [_defaults removeObjectForKey:key];
+        }
+    }
+    
+    // remove ball position
+    [_defaults removeObjectForKey:@"ballX"];
+    [_defaults removeObjectForKey:@"ballY"];
+    
+    // Initialize everything again
+    [self initBricksWithBounds: _bounds];
+    [self initPaddleWithBounds: _bounds];
+    [self initBallWithBounds:   _bounds];
+    
+    [self observeMutableConfiguration];
+    
+    // Notify the delegate that the model has been reloaded
+    [self.delegate modelReloadedWithModel:self];
 }
 
 -(void) update:(CFTimeInterval)dt
@@ -68,8 +97,6 @@
     // Paddle intersection
     if (!reflected && CGRectIntersectsRect(_ball.frame, _paddle.frame)) {
         CGRect intersection = CGRectIntersection(_ball.frame, _paddle.frame);
-        
-        NSLog(@"(%f, %f)", intersection.origin.x, intersection.origin.y);
         [_ball reflectAgainstSurfaceWithAngle:M_PI];
     }
 }
@@ -90,7 +117,7 @@
    
     // Save the bricks' state
     for (AldBrick *brick in _bricks) {
-        NSString *key = [NSString stringWithFormat:@"brick%d", brick.ID];
+        NSString *key = [NSString stringWithFormat:@"brickState%d", brick.ID];
         [_defaults setInteger:brick.broken ? 1 : 0 forKey:key];
     }
     
@@ -106,6 +133,8 @@
     
     [_defaults setInteger:[NSDate timeIntervalSinceReferenceDate] forKey:@"lastSave"];
     [_defaults synchronize];
+    
+    _hasBeenModified = NO;
 }
 
 #pragma mark Initialization methods
@@ -131,6 +160,9 @@
     // Reset the score
     _score = 0;
     
+    // remove all existing bricks, as the game might be reloading
+    [_bricks removeAllObjects];
+    
     for (int i = 1, x = bounds.origin.x, y = bounds.origin.y;
          i <= _brickColumns * _brickRows;
          i += 1) {
@@ -140,7 +172,7 @@
         
         if (lastSave > 0) {
             // If there is a previous save-file, restore the brick's broken state
-            NSString *key = [NSString stringWithFormat:@"brick%d", i];
+            NSString *key = [NSString stringWithFormat:@"brickState%d", i];
             int state = [self readIntegerForKey:key onZeroReturn:0];
             [brick setBroken:state];
             
@@ -178,7 +210,7 @@
     srand(time(NULL));
     
     CGFloat defaultR = kDefaultBallDiameterInPercentage * bounds.size.width * 0.01 * 0.5,
-            defaultV = kDefaultBallVelocityInPercentage * bounds.size.width * 0.01,
+            defaultV = kDefaultBallVelocityInPixels,
             defaultX = (bounds.size.width - defaultR*2) * 0.5,
             defaultY = (bounds.size.height - defaultR*2) * 0.5,
             defaultD = kDefaultBallDirectionInDegreesMin + (rand() % (kDefaultBallDirectionInDegreesMax - kDefaultBallDirectionInDegreesMin)) * M_PI / 180.0f,
@@ -194,7 +226,31 @@
     _ball = [[AldBall alloc] initWithFrame:frame direction:d andVelocity:v];
 }
 
+#pragma mark Mutable configuration observers
+
+-(void) observeMutableConfiguration
+{
+    [self addObserver:self forKeyPath:@"ball.velocity" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"brickRows"    options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"brickColumns" options:NSKeyValueObservingOptionNew context:nil];
+    
+    _hasBeenModified = NO;
+}
+
+-(void) unobserveMutableConfiguration
+{
+    [self removeObserver:self forKeyPath:@"ball.velocity"];
+    [self removeObserver:self forKeyPath:@"brickRows"];
+    [self removeObserver:self forKeyPath:@"brickColumns"];
+}
+
+-(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    _hasBeenModified = YES;
+}
+
 #pragma mark Score methods
+
 -(void) award: (int)score
 {
     [self setScore: score + _score];
@@ -214,10 +270,6 @@
 
 -(int) readIntegerForKey: (NSString *)key onZeroReturn: (int)onZeroValue
 {
-#if DEBUG
-    return onZeroValue;
-#endif
-    
     int value = [_defaults integerForKey:key];
     
     if (value == 0) {
@@ -228,10 +280,6 @@
 
 -(CGFloat) readFloatForKey: (NSString *)key onZeroReturn: (CGFloat)onZeroValue
 {
-#if DEBUG
-    return onZeroValue;
-#endif
-    
     int value = [_defaults floatForKey:key];
     
     if (value == 0) {

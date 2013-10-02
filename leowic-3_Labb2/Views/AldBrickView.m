@@ -23,7 +23,13 @@
     return self;
 }
 
-- (void)observeValueForKeyPath: (NSString *)keyPath
+-(void) removeFromSuperview
+{
+    [_brick removeObserver:self forKeyPath:@"broken"];
+    [super removeFromSuperview];
+}
+
+-(void) observeValueForKeyPath: (NSString *)keyPath
                       ofObject: (id)object
                         change: (NSDictionary *)change
                        context: (void *)context

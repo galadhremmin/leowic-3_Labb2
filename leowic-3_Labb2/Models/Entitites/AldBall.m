@@ -69,10 +69,6 @@
 
 -(void) reflectAgainstSurfaceWithAngle: (CGFloat)angle
 {
-#if DEBUG
-    NSLog(@"BEFORE %.2f", _direction * 180 / M_PI);
-#endif
-    
     CGFloat dir = 2 * angle - _direction;
     
     _direction = dir;
@@ -83,10 +79,6 @@
     while (_direction > M_PI) {
         _direction -= 2*M_PI;
     }
-    
-#if DEBUG
-    NSLog(@"AFTER %.2f", _direction * 180 / M_PI);
-#endif
 }
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 LTU. All rights reserved.
 //
 
+#import <math.h>
 #import "AldChoiceSelectionViewController.h"
 
 @interface AldChoiceSelectionViewController ()
@@ -26,18 +27,11 @@
 -(void) viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 -(void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -66,9 +60,20 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    id choice = [_choices objectAtIndex:[indexPath row]];
+    id choice        = [_choices objectAtIndex:[indexPath row]];
+    id currentChoice = [_model valueForKeyPath:_configurationPath];
+    
+    BOOL isEqual = NO;
+    if ([choice isKindOfClass:[NSNumber class]]) {
+        isEqual = ABS([choice floatValue] - [currentChoice floatValue]) < 0.0000001f;
+    } else if ([choice isKindOfClass:[NSString class]]) {
+        isEqual = [choice isEqualToString:currentChoice];
+    } else {
+        isEqual = (choice == currentChoice);
+    }
+    
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", choice]];
-    cell.accessoryType = choice == _selectedChoice
+    cell.accessoryType = isEqual
         ? UITableViewCellAccessoryCheckmark
         : UITableViewCellAccessoryDisclosureIndicator;
     
@@ -79,7 +84,9 @@
 
 -(void) tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath
 {
-    _selectedChoice = [_choices objectAtIndex:indexPath.row];
+    id choice = [_choices objectAtIndex:indexPath.row];
+    
+    [_model setValue:choice forKeyPath:_configurationPath];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -23,12 +23,12 @@
 
 @implementation AldGameViewController
 
-- (void)awakeFromNib
+-(void) awakeFromNib
 {
     [super awakeFromNib];
 }
 
-- (void)viewDidLoad
+-(void) viewDidLoad
 {
     [super viewDidLoad];
     
@@ -44,12 +44,18 @@
 
     _model = [[AldModel alloc] initWithDelegate:self];
     [_model loadWithBounds:canvas];
-    
-    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop)];
-    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+-(void) viewDidAppear:(BOOL)animated
+{
+    if (_model.hasBeenModified) {
+        [self clearView];
+        [_model save];
+        [_model reload];
+    }
+}
+
+-(void) viewDidDisappear:(BOOL)animated
 {
     [_displayLink invalidate];
     _displayLink = nil;
@@ -57,7 +63,7 @@
     [_model save];
 }
 
-- (void)didReceiveMemoryWarning
+-(void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -92,10 +98,20 @@
 }
 
 #pragma mark View initialization
--(void) startGame
+-(void) clearView
 {
     // Remove all subviews from the current view
     [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+-(void) startGame
+{
+    if (_displayLink == nil) {
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop)];
+        [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    }
+    
+    [self clearView];
     
     // Now, create a view for every brick
     for (AldBrick *brick in _model.bricks) {
@@ -166,10 +182,11 @@
 
 -(void) modelReloadedWithModel: (id)model
 {
-    
+    [self startGame];
 }
 
--(void) modelWillSave: (id)model {
+-(void) modelWillSave: (id)model
+{
     
 }
 

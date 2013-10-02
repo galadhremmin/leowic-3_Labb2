@@ -41,6 +41,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewWillAppear: (BOOL)animated
+{
+    if (_model.hasBeenModified) {
+        UITableView *view = (UITableView *)self.view;
+        [view reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationRight];
+    }
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+}
+
 #pragma mark - Table view data source
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -120,12 +132,21 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int identifier = indexPath.row + indexPath.section * 10;
-    NSArray *choices = nil;
-    id currentChoice;
+    NSArray  *choices = nil;
+    NSString *key;
     
     switch (identifier) {
         case 0:
             choices = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], nil];
+            key = @"brickRows";
+            break;
+        case 1:
+            choices = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], [NSNumber numberWithInt:6], nil];
+            key = @"brickColumns";
+            break;
+        case 2:
+            choices = [NSArray arrayWithObjects:[NSNumber numberWithFloat:40.f], [NSNumber numberWithFloat:50.f], [NSNumber numberWithFloat:80.f], [NSNumber numberWithFloat:100.f], [NSNumber numberWithFloat:130.f], [NSNumber numberWithFloat:200.f], [NSNumber numberWithFloat:300.f], nil];
+            key = @"ball.velocity";
             break;
         case 10:
             [_model delete];
@@ -139,7 +160,8 @@
     if (choices != nil) {
         id choicesController = [[AldChoiceSelectionViewController alloc] init];
         [choicesController setChoices:choices];
-        [choicesController setSelectedChoice:currentChoice];
+        [choicesController setModel:_model];
+        [choicesController setConfigurationPath:key];
         
         [self presentViewController:choicesController animated:YES completion:nil];
     }

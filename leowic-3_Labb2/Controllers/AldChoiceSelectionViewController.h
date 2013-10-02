@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AldModel.h"
 
 @interface AldChoiceSelectionViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSArray *choices;
-@property (nonatomic, strong) id selectedChoice;
+@property (nonatomic, strong) NSArray  *choices;
+@property (nonatomic, weak)   AldModel *model;
+@property (nonatomic, strong) NSString *configurationPath;
 
 @end
