@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7063A0D17FF2A0000419FFC /* AldPaddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7063A0C17FF2A0000419FFC /* AldPaddleView.m */; };
+		D7063A0F17FF2ACF00419FFC /* paddle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7063A0E17FF2ACF00419FFC /* paddle.jpg */; };
 		D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */; };
 		D745BEAD17FEB54600D11DC2 /* rough.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D745BEAC17FEB54600D11DC2 /* rough.jpg */; };
 		D745BEAF17FEB78F00D11DC2 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = D745BEAE17FEB78F00D11DC2 /* planet.png */; };
@@ -36,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D7063A0B17FF2A0000419FFC /* AldPaddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldPaddleView.h; sourceTree = "<group>"; };
+		D7063A0C17FF2A0000419FFC /* AldPaddleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldPaddleView.m; sourceTree = "<group>"; };
+		D7063A0E17FF2ACF00419FFC /* paddle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paddle.jpg; sourceTree = "<group>"; };
 		D73AAB8317FAF03000DC2B59 /* AldSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldSettingsViewController.h; sourceTree = "<group>"; };
 		D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldSettingsViewController.m; sourceTree = "<group>"; };
 		D745BEAC17FEB54600D11DC2 /* rough.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rough.jpg; sourceTree = "<group>"; };
@@ -157,6 +162,7 @@
 		D7C2D75C17FB2D4000014263 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D7063A0E17FF2ACF00419FFC /* paddle.jpg */,
 				D745BEAE17FEB78F00D11DC2 /* planet.png */,
 				D745BEAC17FEB54600D11DC2 /* rough.jpg */,
 				D7C2D75D17FB2D4A00014263 /* background.jpg */,
@@ -208,6 +214,8 @@
 				D7C2D76417FB333D00014263 /* AldScoreView.m */,
 				D745BEB017FEB7B900D11DC2 /* AldBallView.h */,
 				D745BEB117FEB7B900D11DC2 /* AldBallView.m */,
+				D7063A0B17FF2A0000419FFC /* AldPaddleView.h */,
+				D7063A0C17FF2A0000419FFC /* AldPaddleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 				D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */,
 				D745BEAD17FEB54600D11DC2 /* rough.jpg in Resources */,
 				D745BEAF17FEB78F00D11DC2 /* planet.png in Resources */,
+				D7063A0F17FF2ACF00419FFC /* paddle.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +326,7 @@
 				D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */,
 				D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */,
 				D745BEB217FEB7B900D11DC2 /* AldBallView.m in Sources */,
+				D7063A0D17FF2A0000419FFC /* AldPaddleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

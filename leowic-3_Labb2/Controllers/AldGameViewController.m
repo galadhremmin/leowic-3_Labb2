@@ -10,6 +10,7 @@
 #import "AldGameViewController.h"
 #import "AldModel.h"
 #import "AldBallView.h"
+#import "AldPaddleView.h"
 #import "AldBrickView.h"
 #import "AldScoreView.h"
 
@@ -121,9 +122,7 @@
     }
 
     // Create the paddle view
-    UIView *paddleView = [[UIView alloc] initWithFrame:_model.paddle.frame];
-    [paddleView setBackgroundColor: [UIColor redColor]];
-    
+    UIView *paddleView = [[AldPaddleView alloc] initWithPaddle:_model.paddle];
     [self.view addSubview:paddleView];
     _paddleView = paddleView;
     
