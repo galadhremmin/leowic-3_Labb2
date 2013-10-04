@@ -85,6 +85,14 @@
 {
     CFTimeInterval now = [_displayLink timestamp];
     
+    if (_lastRender == -1) {
+        _lastRender = 0;
+        // wait for two seconds to make sure that the player gets a chance to
+        // familiarise herself with the board
+        sleep(2);
+        return;
+    }
+    
     if (_lastRender == 0) {
         _lastRender = now;
         return;
@@ -107,12 +115,7 @@
 }
 
 -(void) startGame
-{
-    if (_displayLink == nil) {
-        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop)];
-        [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    }
-    
+{    
     [self clearView];
     
     // Now, create a view for every brick
@@ -135,6 +138,12 @@
     CGRect scoreRect = CGRectMake(0, _model.bounds.size.height + _model.bounds.origin.y - 30, 30, 30);
     AldScoreView *scoreView = [[AldScoreView alloc] initWithFrame:scoreRect listeningToModel:_model];
     [self.view addSubview:scoreView];
+    
+    if (_displayLink == nil) {
+        _lastRender = -1; // force the phone to wait for two seconds
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop)];
+        [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    }
 }
 
 #pragma mark Touches
