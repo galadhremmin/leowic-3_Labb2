@@ -191,6 +191,10 @@
 
 -(void) modelStateChanged: (int)state
 {
+    if (_displayLink == nil) {
+        return;
+    }
+    
     NSString *title, *message;
     switch (state) {
         case kAldModelStateGameFailed:
@@ -213,6 +217,10 @@
 
 -(void) alertView: (UIAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
+    if (_displayLink == nil) {
+        return;
+    }
+    
     [self clearView];
     [_model reload];
 }

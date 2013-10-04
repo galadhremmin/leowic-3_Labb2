@@ -63,9 +63,10 @@
         }
     }
     
-    // remove ball position
+    // remove ball position and direction
     [_defaults removeObjectForKey:@"ballX"];
     [_defaults removeObjectForKey:@"ballY"];
+    [_defaults removeObjectForKey:@"ballD"];
     
     // Initialize everything again
     [self initBricksWithBounds: _bounds];
@@ -115,8 +116,13 @@
     
     // Paddle intersection
     if (reflected == kAldBallReflectNone && CGRectIntersectsRect(_ball.frame, _paddle.frame)) {
-        CGRect intersection = CGRectIntersection(_ball.frame, _paddle.frame);
-        [_ball reflectAgainstSurfaceWithAngle:M_PI];
+                // Calculate the ball's center position in relationship to the paddle's current position and width. This will serve as a magnitude
+                // used to determine the direction of the resulting angle.
+        CGFloat rel = MAX(_ball.frame.origin.x - _paddle.frame.origin.x + _ball.frame.size.width * 0.5, 0) / _paddle.frame.size.width,
+                // start at 150° (PI / 6 * 5) and go as far as 240° depending on the ball's position on the paddle
+                dir = -M_PI/6 * 5 + M_PI/2 * rel;
+        
+        [_ball setDirection:dir];
     }
 }
 
