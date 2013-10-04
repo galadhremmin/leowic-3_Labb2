@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AldGameViewController.h"
 #import "AldModel.h"
+#import "AldBallView.h"
 #import "AldBrickView.h"
 #import "AldScoreView.h"
 
@@ -127,9 +128,7 @@
     _paddleView = paddleView;
     
     // Create the ball view
-    UIView *ballView = [[UIView alloc] initWithFrame:_model.ball.frame];
-    [ballView setBackgroundColor:[UIColor blueColor]];
-    
+    AldBallView *ballView = [[AldBallView alloc] initWithBall:_model.ball];
     [self.view addSubview:ballView];
     _ballView = ballView;
     

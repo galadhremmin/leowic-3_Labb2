@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */; };
+		D745BEAD17FEB54600D11DC2 /* rough.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D745BEAC17FEB54600D11DC2 /* rough.jpg */; };
+		D745BEAF17FEB78F00D11DC2 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = D745BEAE17FEB78F00D11DC2 /* planet.png */; };
+		D745BEB217FEB7B900D11DC2 /* AldBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = D745BEB117FEB7B900D11DC2 /* AldBallView.m */; };
 		D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */ = {isa = PBXBuildFile; fileRef = D74DA29717F84FAD00DBE019 /* AldBall.m */; };
 		D74DA29A17F85A4200DBE019 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74DA29917F85A4200DBE019 /* QuartzCore.framework */; };
 		D76AEAAE17F5B6CC0075BA5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76AEAAD17F5B6CC0075BA5F /* UIKit.framework */; };
@@ -35,6 +38,10 @@
 /* Begin PBXFileReference section */
 		D73AAB8317FAF03000DC2B59 /* AldSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldSettingsViewController.h; sourceTree = "<group>"; };
 		D73AAB8417FAF03000DC2B59 /* AldSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldSettingsViewController.m; sourceTree = "<group>"; };
+		D745BEAC17FEB54600D11DC2 /* rough.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rough.jpg; sourceTree = "<group>"; };
+		D745BEAE17FEB78F00D11DC2 /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet.png; sourceTree = "<group>"; };
+		D745BEB017FEB7B900D11DC2 /* AldBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldBallView.h; sourceTree = "<group>"; };
+		D745BEB117FEB7B900D11DC2 /* AldBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldBallView.m; sourceTree = "<group>"; };
 		D74DA29617F84FAD00DBE019 /* AldBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldBall.h; sourceTree = "<group>"; };
 		D74DA29717F84FAD00DBE019 /* AldBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldBall.m; sourceTree = "<group>"; };
 		D74DA29917F85A4200DBE019 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -150,6 +157,8 @@
 		D7C2D75C17FB2D4000014263 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D745BEAE17FEB78F00D11DC2 /* planet.png */,
+				D745BEAC17FEB54600D11DC2 /* rough.jpg */,
 				D7C2D75D17FB2D4A00014263 /* background.jpg */,
 			);
 			path = Images;
@@ -197,6 +206,8 @@
 				D7FDC72C17F8387100D2D8F2 /* AldBrickView.m */,
 				D7C2D76317FB333D00014263 /* AldScoreView.h */,
 				D7C2D76417FB333D00014263 /* AldScoreView.m */,
+				D745BEB017FEB7B900D11DC2 /* AldBallView.h */,
+				D745BEB117FEB7B900D11DC2 /* AldBallView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +291,8 @@
 				D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */,
 				D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */,
 				D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */,
+				D745BEAD17FEB54600D11DC2 /* rough.jpg in Resources */,
+				D745BEAF17FEB78F00D11DC2 /* planet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +316,7 @@
 				D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */,
 				D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */,
 				D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */,
+				D745BEB217FEB7B900D11DC2 /* AldBallView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
