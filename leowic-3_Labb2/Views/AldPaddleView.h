@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AldPaddle.h"
+#import "AldShadowedView.h"
 
-@interface AldPaddleView : UIView
+@interface AldPaddleView : AldShadowedView
 
 -(id) initWithPaddle: (AldPaddle *)paddle;
 

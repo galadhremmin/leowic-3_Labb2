@@ -14,32 +14,8 @@
 
 -(id) initWithPaddle: (AldPaddle *)paddle
 {
-    self = [super initWithFrame:paddle.frame];
-    if (self) {
-        [self applyBackground];
-        [self applyShadow];
-    }
-    
+    self = [super initWithFrame:paddle.frame andBackground:@"paddle.jpg"];
     return self;
 }
-
--(void) applyBackground
-{
-    NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-    NSString *imagePath  = [resourcePath stringByAppendingPathComponent:@"paddle.jpg"];
-    
-    UIImage *background = [[UIImage imageWithContentsOfFile:imagePath] scaleToSize:self.frame.size];
-    
-    [self setBackgroundColor:[UIColor colorWithPatternImage:background]];
-}
-
--(void) applyShadow
-{
-    self.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.layer.shadowOffset = CGSizeMake(3.f, 3.f);
-    self.layer.shadowOpacity = 0.5f;
-    self.layer.shadowRadius = 2.f;
-}
-
 
 @end

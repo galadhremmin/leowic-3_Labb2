@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AldBrick.h"
+#import "AldShadowedView.h"
 
-@interface AldBrickView : UIView
+@interface AldBrickView : AldShadowedView
 
 @property (nonatomic, weak) AldBrick *brick;
 

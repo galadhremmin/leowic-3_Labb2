@@ -26,6 +26,7 @@
 		D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */; };
 		D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */; };
 		D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEEC617F8769D0024EA07 /* AldPaddle.m */; };
+		D78254D917FF2B7E00F588F6 /* AldShadowedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78254D817FF2B7E00F588F6 /* AldShadowedView.m */; };
 		D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7C2D75D17FB2D4A00014263 /* background.jpg */; };
 		D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76117FB306A00014263 /* UIImageScaling.m */; };
 		D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76417FB333D00014263 /* AldScoreView.m */; };
@@ -66,6 +67,8 @@
 		D76AEAC817F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D76AEEC517F8769D0024EA07 /* AldPaddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldPaddle.h; sourceTree = "<group>"; };
 		D76AEEC617F8769D0024EA07 /* AldPaddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldPaddle.m; sourceTree = "<group>"; };
+		D78254D717FF2B7E00F588F6 /* AldShadowedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldShadowedView.h; sourceTree = "<group>"; };
+		D78254D817FF2B7E00F588F6 /* AldShadowedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldShadowedView.m; sourceTree = "<group>"; };
 		D7C2D75D17FB2D4A00014263 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		D7C2D76017FB306A00014263 /* UIImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageScaling.h; sourceTree = "<group>"; };
 		D7C2D76117FB306A00014263 /* UIImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageScaling.m; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				D745BEB117FEB7B900D11DC2 /* AldBallView.m */,
 				D7063A0B17FF2A0000419FFC /* AldPaddleView.h */,
 				D7063A0C17FF2A0000419FFC /* AldPaddleView.m */,
+				D78254D717FF2B7E00F588F6 /* AldShadowedView.h */,
+				D78254D817FF2B7E00F588F6 /* AldShadowedView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */,
 				D745BEB217FEB7B900D11DC2 /* AldBallView.m in Sources */,
 				D7063A0D17FF2A0000419FFC /* AldPaddleView.m in Sources */,
+				D78254D917FF2B7E00F588F6 /* AldShadowedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  AldBallView.h
+//  AldShadowedView.h
 //  leowic-3_Labb2
 //
 //  Created by Leonard Wickmark on 10/4/13.
@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AldBall.h"
-#import "AldShadowedView.h"
 
-@interface AldBallView : AldShadowedView
+@interface AldShadowedView : UIView
 
--(id) initWithBall: (AldBall *)ball;
+- (id)initWithFrame:(CGRect)frame andBackground: (NSString *)backgroundPath;
 
 @end
