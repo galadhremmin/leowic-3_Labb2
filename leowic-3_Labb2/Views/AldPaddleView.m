@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "UIImageScaling.h"
 #import "AldPaddleView.h"
 
 @implementation AldPaddleView
@@ -15,6 +14,9 @@
 -(id) initWithPaddle: (AldPaddle *)paddle
 {
     self = [super initWithFrame:paddle.frame andBackground:@"paddle.jpg"];
+    if (self) {
+        [self setUserInteractionEnabled:YES];
+    }
     return self;
 }
 

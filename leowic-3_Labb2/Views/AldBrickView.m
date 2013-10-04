@@ -8,7 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "AldBrickView.h"
-#import "UIImageScaling.h"
 
 @implementation AldBrickView
 

@@ -7,7 +7,6 @@
 //
 
 #import "AldGameView.h"
-#import "UIImageScaling.h"
 
 @implementation AldGameView
 
@@ -21,9 +20,9 @@
     NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
     NSString *imagePath  = [resourcePath stringByAppendingPathComponent:@"background.jpg"];
     
-    UIImage *backgroundNebula = [[UIImage imageWithContentsOfFile:imagePath] scaleToSize:self.frame.size];
-
-    [self setBackgroundColor:[UIColor colorWithPatternImage:backgroundNebula]];
+    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    [self setImage:image];
+    [self setContentMode:UIViewContentModeScaleAspectFill];
 }
 
 @end

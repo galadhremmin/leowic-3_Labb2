@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "UIImageScaling.h"
 #import "AldShadowedView.h"
 
 @implementation AldShadowedView
@@ -29,11 +28,10 @@
     }
     
     NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
-    NSString *imagePath  = [resourcePath stringByAppendingPathComponent:backgroundPath];
+    NSString *imagePath    = [resourcePath stringByAppendingPathComponent:backgroundPath];
+    UIImage *image         = [UIImage imageWithContentsOfFile:imagePath];
     
-    UIImage *background = [[UIImage imageWithContentsOfFile:imagePath] scaleToSize:self.frame.size];
-    
-    [self setBackgroundColor:[UIColor colorWithPatternImage:background]];
+    [self setImage:image];
 }
 
 -(void) applyShadow

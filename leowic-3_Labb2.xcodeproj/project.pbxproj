@@ -26,9 +26,8 @@
 		D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC517F5B6CC0075BA5F /* Default-568h@2x.png */; };
 		D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76AEAC717F5B6CC0075BA5F /* MainStoryboard.storyboard */; };
 		D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */ = {isa = PBXBuildFile; fileRef = D76AEEC617F8769D0024EA07 /* AldPaddle.m */; };
+		D780D8E617FF38DA00664FA2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D780D8E517FF38DA00664FA2 /* background.jpg */; };
 		D78254D917FF2B7E00F588F6 /* AldShadowedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78254D817FF2B7E00F588F6 /* AldShadowedView.m */; };
-		D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7C2D75D17FB2D4A00014263 /* background.jpg */; };
-		D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76117FB306A00014263 /* UIImageScaling.m */; };
 		D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76417FB333D00014263 /* AldScoreView.m */; };
 		D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C2D76D17FB3E4100014263 /* AldChoiceSelectionViewController.m */; };
 		D7FDC71817F7912E00D2D8F2 /* AldGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDC71717F7912E00D2D8F2 /* AldGameView.m */; };
@@ -67,11 +66,9 @@
 		D76AEAC817F5B6CC0075BA5F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D76AEEC517F8769D0024EA07 /* AldPaddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldPaddle.h; sourceTree = "<group>"; };
 		D76AEEC617F8769D0024EA07 /* AldPaddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldPaddle.m; sourceTree = "<group>"; };
+		D780D8E517FF38DA00664FA2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		D78254D717FF2B7E00F588F6 /* AldShadowedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldShadowedView.h; sourceTree = "<group>"; };
 		D78254D817FF2B7E00F588F6 /* AldShadowedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldShadowedView.m; sourceTree = "<group>"; };
-		D7C2D75D17FB2D4A00014263 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		D7C2D76017FB306A00014263 /* UIImageScaling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageScaling.h; sourceTree = "<group>"; };
-		D7C2D76117FB306A00014263 /* UIImageScaling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageScaling.m; sourceTree = "<group>"; };
 		D7C2D76317FB333D00014263 /* AldScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldScoreView.h; sourceTree = "<group>"; };
 		D7C2D76417FB333D00014263 /* AldScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AldScoreView.m; sourceTree = "<group>"; };
 		D7C2D76C17FB3E4100014263 /* AldChoiceSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AldChoiceSelectionViewController.h; sourceTree = "<group>"; };
@@ -135,7 +132,6 @@
 		D76AEAB517F5B6CC0075BA5F /* leowic-3_Labb2 */ = {
 			isa = PBXGroup;
 			children = (
-				D7C2D75F17FB303300014263 /* Extensions */,
 				D7C2D75C17FB2D4000014263 /* Images */,
 				D7FDC71517F7905200D2D8F2 /* Storyboards */,
 				D7FDC71417F7903F00D2D8F2 /* Views */,
@@ -165,21 +161,12 @@
 		D7C2D75C17FB2D4000014263 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D780D8E517FF38DA00664FA2 /* background.jpg */,
 				D7063A0E17FF2ACF00419FFC /* paddle.jpg */,
 				D745BEAE17FEB78F00D11DC2 /* planet.png */,
 				D745BEAC17FEB54600D11DC2 /* rough.jpg */,
-				D7C2D75D17FB2D4A00014263 /* background.jpg */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		D7C2D75F17FB303300014263 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D7C2D76017FB306A00014263 /* UIImageScaling.h */,
-				D7C2D76117FB306A00014263 /* UIImageScaling.m */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D7FDC70E17F78D0D00D2D8F2 /* Controllers */ = {
@@ -303,10 +290,10 @@
 				D76AEAC417F5B6CC0075BA5F /* Default@2x.png in Resources */,
 				D76AEAC617F5B6CC0075BA5F /* Default-568h@2x.png in Resources */,
 				D76AEAC917F5B6CC0075BA5F /* MainStoryboard.storyboard in Resources */,
-				D7C2D75E17FB2D4A00014263 /* background.jpg in Resources */,
 				D745BEAD17FEB54600D11DC2 /* rough.jpg in Resources */,
 				D745BEAF17FEB78F00D11DC2 /* planet.png in Resources */,
 				D7063A0F17FF2ACF00419FFC /* paddle.jpg in Resources */,
+				D780D8E617FF38DA00664FA2 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +314,6 @@
 				D74DA29817F84FAD00DBE019 /* AldBall.m in Sources */,
 				D76AEEC717F8769D0024EA07 /* AldPaddle.m in Sources */,
 				D73AAB8517FAF03000DC2B59 /* AldSettingsViewController.m in Sources */,
-				D7C2D76217FB306A00014263 /* UIImageScaling.m in Sources */,
 				D7C2D76517FB333D00014263 /* AldScoreView.m in Sources */,
 				D7C2D76E17FB3E4100014263 /* AldChoiceSelectionViewController.m in Sources */,
 				D745BEB217FEB7B900D11DC2 /* AldBallView.m in Sources */,

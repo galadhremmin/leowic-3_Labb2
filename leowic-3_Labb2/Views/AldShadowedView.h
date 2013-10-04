@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AldShadowedView : UIView
+@interface AldShadowedView : UIImageView
 
 - (id)initWithFrame:(CGRect)frame andBackground: (NSString *)backgroundPath;
 

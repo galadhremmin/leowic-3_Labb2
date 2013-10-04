@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AldGameView : UIView
+@interface AldGameView : UIImageView
 
 @end
