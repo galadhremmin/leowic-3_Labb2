@@ -48,7 +48,7 @@
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    if (_model.hasBeenModified) {
+    if (_model.hasBeenModified || _model.state != kAldModelStateGameRunning) {
         [self clearView];
         [_model save];
         [_model reload];
@@ -189,5 +189,34 @@
 {
     
 }
+
+-(void) modelStateChanged: (int)state
+{
+    NSString *title, *message;
+    switch (state) {
+        case kAldModelStateGameFailed:
+            title = @"Game over";
+            message = [NSString stringWithFormat: @"Du lyckades samla ihop %d poäng.", _model.score];
+            break;
+        case kAldModelStateGameFinished:
+            title = @"Bra jobb!";
+            message = [NSString stringWithFormat: @"Du rensade alla block och samlade ihop hela %d poäng!", _model.score];
+            break;
+        default:
+            return;
+    }
+    
+    UIAlertView *view = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Starta om" otherButtonTitles:nil, nil];
+    [view show];
+}
+
+#pragma mark UIAlertView delegates
+
+-(void) alertView: (UIAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+{
+    [self clearView];
+    [_model reload];
+}
+
 
 @end

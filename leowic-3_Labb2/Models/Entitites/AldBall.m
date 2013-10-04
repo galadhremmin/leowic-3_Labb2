@@ -21,7 +21,7 @@
     return self;
 }
 
--(BOOL) moveWithinFrame: (CGRect)frame withinFractionsOfASecond:(CFTimeInterval)dt
+-(AldBallReflectPlane) moveWithinFrame: (CGRect)frame withinFractionsOfASecond:(CFTimeInterval)dt
 {
     CGFloat dx = dt * cosf(_direction) * _velocity,
             dy = dt * sinf(_direction) * _velocity,
@@ -29,33 +29,33 @@
             y  = _frame.origin.y + dy,
             angle = 0;
     
-    BOOL reflect = NO;
+    AldBallReflectPlane reflect = kAldBallReflectNone;
     
     if (x <= frame.origin.x) {
         x = frame.origin.x;
-        reflect = YES;
+        reflect = kAldBallReflectLeft;
         angle = M_PI/2;
     }
     
     if (y <= frame.origin.y) {
         y = frame.origin.y;
-        reflect = YES;
+        reflect = kAldBallReflectTop;
         angle = M_PI;
     }
     
     if (x >= frame.size.width + frame.origin.x - _frame.size.width) {
         x = frame.size.width + frame.origin.x - _frame.size.width;
-        reflect = YES;
+        reflect = kAldBallReflectRight;
         angle = M_PI/2;
     }
         
     if (y >= frame.size.height + frame.origin.y - _frame.size.height) {
         y = frame.size.height + frame.origin.y - _frame.size.height;
-        reflect = YES;
+        reflect = kAldBallReflectBottom;
         angle = M_PI;
     }
     
-    if (reflect) {
+    if (reflect != kAldBallReflectNone) {
         [self reflectAgainstSurfaceWithAngle:angle];
     }
     

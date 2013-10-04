@@ -13,5 +13,6 @@
 -(void) modelLoadedWithModel: (id)model;
 -(void) modelReloadedWithModel: (id)model;
 -(void) modelWillSave: (id)model;
+-(void) modelStateChanged: (int)state;
 
 @end

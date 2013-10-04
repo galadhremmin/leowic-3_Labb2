@@ -15,7 +15,7 @@
 
 @implementation AldSettingsViewController
 
--(id) initWithStyle:(UITableViewStyle)style
+-(id) initWithStyle: (UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
@@ -49,7 +49,7 @@
     }
 }
 
--(void) viewWillDisappear:(BOOL)animated
+-(void) viewWillDisappear: (BOOL)animated
 {
 }
 
@@ -61,7 +61,7 @@
     return 2;
 }
 
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger) tableView: (UITableView *)tableView numberOfRowsInSection: (NSInteger)section
 {
     // Return the number of rows in the section.
     switch (section) {
@@ -74,7 +74,7 @@
     return 0;
 }
 
--(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(NSString *) tableView: (UITableView *)tableView titleForHeaderInSection: (NSInteger)section
 {
     switch (section)
     {
@@ -87,7 +87,7 @@
     }
 }
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *) tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -129,7 +129,7 @@
 
 #pragma mark - Table view delegate
 
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void) tableView: (UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *)indexPath
 {
     int identifier = indexPath.row + indexPath.section * 10;
     NSArray  *choices = nil;

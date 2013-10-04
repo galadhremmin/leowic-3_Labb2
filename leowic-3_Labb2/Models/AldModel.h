@@ -21,6 +21,11 @@
 #define kDefaultBallDirectionInDegreesMax (135)
 #define kDefaultBallDirectionInDegreesMin (45)
 
+#define kAldModelStateGameInitializing    (0)
+#define kAldModelStateGameRunning         (1)
+#define kAldModelStateGameFinished        (2)
+#define kAldModelStateGameFailed          (3)
+
 @interface AldModel : NSObject
 
 @property (weak, nonatomic)   NSObject<AldModelDelegate> *delegate;
@@ -29,6 +34,7 @@
 @property (nonatomic, strong)           AldBall        *ball;
 @property (nonatomic, readonly)         AldPaddle      *paddle;
 @property (nonatomic, readonly)         CGRect          bounds;
+@property (nonatomic, readonly)         int             state;
 @property (nonatomic, readonly)         int             score;
 @property (nonatomic)                   int             brickColumns;
 @property (nonatomic)                   int             brickRows;

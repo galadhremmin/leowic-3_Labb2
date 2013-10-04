@@ -12,6 +12,7 @@
 @interface AldModel ()
 
 @property(nonatomic, weak) NSUserDefaults *defaults;
+@property(nonatomic) int state;
 @property(nonatomic) int score;
 
 @end
@@ -33,16 +34,24 @@
     _bricks = [NSMutableArray array];
     _bounds = bounds;
     
+    [self setState: kAldModelStateGameInitializing];
+    
     [self initBricksWithBounds: _bounds];
     [self initPaddleWithBounds: _bounds];
     [self initBallWithBounds:   _bounds];
+    
     [self observeMutableConfiguration];
     
     [self.delegate modelLoadedWithModel:self];
+    
+    [self setState: kAldModelStateGameRunning];
 }
 
 -(void) reload
 {
+    // Change game state to initilaization
+    [self setState: kAldModelStateGameInitializing];
+    
     // Clear all observers
     [self unobserveMutableConfiguration];
     
@@ -67,13 +76,23 @@
     
     // Notify the delegate that the model has been reloaded
     [self.delegate modelReloadedWithModel:self];
+    
+    [self setState: kAldModelStateGameRunning];
 }
 
 -(void) update:(CFTimeInterval)dt
 {
-    BOOL reflected = [_ball moveWithinFrame:_bounds withinFractionsOfASecond:dt];
+    if (_state != kAldModelStateGameRunning)
+        return;
     
-    if (!reflected) {
+    AldBallReflectPlane reflected = [_ball moveWithinFrame:_bounds withinFractionsOfASecond:dt];
+    
+    if (reflected == kAldBallReflectBottom) {
+        [self setState: kAldModelStateGameFailed];
+        return;
+    }
+    
+    if (reflected == kAldBallReflectNone) {
         // Check for intersections
         for (AldBrick *brick in _bricks) {
             // ignore broken bricks
@@ -88,14 +107,14 @@
             [self award:1];
             [brick setBroken:YES];
             [_ball reflectAgainstSurfaceWithAngle:M_PI];
-            reflected = YES;
+            reflected = kAldBallReflectTop;
             
             break;
         }
     }
     
     // Paddle intersection
-    if (!reflected && CGRectIntersectsRect(_ball.frame, _paddle.frame)) {
+    if (reflected == kAldBallReflectNone && CGRectIntersectsRect(_ball.frame, _paddle.frame)) {
         CGRect intersection = CGRectIntersection(_ball.frame, _paddle.frame);
         [_ball reflectAgainstSurfaceWithAngle:M_PI];
     }
@@ -108,6 +127,7 @@
     for (id key in keys) {
         [_defaults removeObjectForKey:key];
     }
+    _hasBeenModified = YES;
 }
 
 -(void) save
@@ -116,14 +136,19 @@
     [self delete];
    
     // Save the bricks' state
-    for (AldBrick *brick in _bricks) {
-        NSString *key = [NSString stringWithFormat:@"brickState%d", brick.ID];
-        [_defaults setInteger:brick.broken ? 1 : 0 forKey:key];
+    if (_state == kAldModelStateGameRunning) {
+        for (AldBrick *brick in _bricks) {
+            NSString *key = [NSString stringWithFormat:@"brickState%d", brick.ID];
+            [_defaults setInteger:brick.broken ? 1 : 0 forKey:key];
+        }
     }
     
     // Save the ball's position
-    [_defaults setFloat:_ball.frame.origin.x    forKey:@"ballX"];
-    [_defaults setFloat:_ball.frame.origin.y    forKey:@"ballY"];
+    if (_state == kAldModelStateGameRunning) {
+        [_defaults setFloat:_ball.frame.origin.x    forKey:@"ballX"];
+        [_defaults setFloat:_ball.frame.origin.y    forKey:@"ballY"];
+    }
+    
     [_defaults setFloat:_ball.velocity          forKey:@"ballV"];
     [_defaults setFloat:_ball.direction         forKey:@"ballD"];
     
@@ -231,8 +256,9 @@
 -(void) observeMutableConfiguration
 {
     [self addObserver:self forKeyPath:@"ball.velocity" options:NSKeyValueObservingOptionNew context:nil];
-    [self addObserver:self forKeyPath:@"brickRows"    options:NSKeyValueObservingOptionNew context:nil];
-    [self addObserver:self forKeyPath:@"brickColumns" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"brickRows"     options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"brickColumns"  options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"state"         options:NSKeyValueObservingOptionNew context:nil];
     
     _hasBeenModified = NO;
 }
@@ -242,10 +268,16 @@
     [self removeObserver:self forKeyPath:@"ball.velocity"];
     [self removeObserver:self forKeyPath:@"brickRows"];
     [self removeObserver:self forKeyPath:@"brickColumns"];
+    [self removeObserver:self forKeyPath:@"state"];
 }
 
--(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+-(void) observeValueForKeyPath: (NSString *)keyPath ofObject: (id)object change: (NSDictionary *)change context: (void *)context
 {
+    if ([keyPath isEqualToString:@"state"]) {
+        [_delegate modelStateChanged: _state];
+        return;
+    }
+    
     _hasBeenModified = YES;
 }
 
@@ -254,6 +286,10 @@
 -(void) award: (int)score
 {
     [self setScore: score + _score];
+    
+    if (_score >= _bricks.count) {
+        [self setState: kAldModelStateGameFinished];
+    }
 }
 
 -(void) penalize: (int)score

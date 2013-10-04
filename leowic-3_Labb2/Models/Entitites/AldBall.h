@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum AldBallReflectPlane_t {
+    kAldBallReflectNone = 0,
+    kAldBallReflectLeft = 1,
+    kAldBallReflectRight = 2,
+    kAldBallReflectTop = 3,
+    kAldBallReflectBottom = 4
+} AldBallReflectPlane;
+
 @interface AldBall : NSObject
 
 @property(nonatomic) CGRect frame;
@@ -15,7 +23,7 @@
 @property(nonatomic) CGFloat velocity;
 
 -(id) initWithFrame: (CGRect)frame direction: (CGFloat)direction andVelocity: (CGFloat)velocity;
--(BOOL) moveWithinFrame: (CGRect)frame withinFractionsOfASecond:(CFTimeInterval)dt;
+-(AldBallReflectPlane) moveWithinFrame: (CGRect)frame withinFractionsOfASecond:(CFTimeInterval)dt;
 -(void) reflectAgainstSurfaceWithAngle: (CGFloat)angle;
 
 @end
