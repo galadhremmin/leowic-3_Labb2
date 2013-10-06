@@ -139,8 +139,8 @@
     AldScoreView *scoreView = [[AldScoreView alloc] initWithFrame:scoreRect listeningToModel:_model];
     [self.view addSubview:scoreView];
     
+    _lastRender = -1; // force the phone to wait for two seconds
     if (_displayLink == nil) {
-        _lastRender = -1; // force the phone to wait for two seconds
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop)];
         [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     }

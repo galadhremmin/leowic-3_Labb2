@@ -17,7 +17,7 @@
 #define kDefaultHeightInPercentage        (3)
 #define kDefaultPaddleWidthInPercentage   (20)
 #define kDefaultBallDiameterInPercentage  (5)
-#define kDefaultBallVelocityInPixels      (50)
+#define kDefaultBallVelocityInPixels      (100)
 #define kDefaultBallDirectionInDegreesMax (135)
 #define kDefaultBallDirectionInDegreesMin (45)
 
